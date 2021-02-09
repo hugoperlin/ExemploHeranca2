@@ -16,6 +16,12 @@ public class CarroPasseio extends Veiculo{
 
 
     @Override
+    public void abastecer(double qtdeCombustivel){
+        System.out.println("Colocando Gasolina ou Alcool no tanque do carro...");
+        this.qtdeCombustivel += qtdeCombustivel;
+    }
+
+    @Override
     public String toString() {
         return "CarroPasseio{" +
                 "placa='" + placa + '\'' +

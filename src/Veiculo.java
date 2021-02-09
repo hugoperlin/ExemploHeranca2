@@ -1,4 +1,4 @@
-public class Veiculo {
+public abstract class Veiculo {
 
     protected String placa;
     protected String cor;
@@ -16,10 +16,7 @@ public class Veiculo {
         this.qtdeCombustivel = qtdeCombustivel;
     }
 
-    public void abastecer(double qtdeCombustivel){
-        System.out.println("Colocando combustivel no veiculo...!");
-        this.qtdeCombustivel += qtdeCombustivel;
-    }
+    public abstract void abastecer(double qtdeCombustivel);
 
     public void andar(double kms){
         this.kilometragem += kms;

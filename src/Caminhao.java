@@ -16,11 +16,12 @@ public class Caminhao extends Veiculo{
         this.pesoCarga = maxCarga;
     }
 
+    @Override
     public void abastecer(double qtdeCombustivel){
 
         System.out.println("Colocando diesel no caminhão!");
-        //this.qtdeCombustivel += qtdeCombustivel;
-        super.abastecer(qtdeCombustivel);
+        this.qtdeCombustivel += qtdeCombustivel;
+
     }
 
 
