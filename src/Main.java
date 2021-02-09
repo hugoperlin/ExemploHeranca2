@@ -8,13 +8,19 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
-        int qtdeCarros = 0;
-        int qtdeCaminhoes = 0;
+        //int qtdeCarros = 0;
+        //int qtdeCaminhoes = 0;
+
+        int qtdeVeiculos = 0;
+
         int op=1;
         int tipo;
 
-        CarroPasseio[] carros = new CarroPasseio[5];
-        Caminhao[] caminhoes = new Caminhao[5];
+        //CarroPasseio[] carros = new CarroPasseio[5];
+        //Caminhao[] caminhoes = new Caminhao[5];
+
+        Veiculo[] veiculos = new Veiculo[10];
+
 
         CarroPasseio carroPasseio;
         Caminhao caminhao;
@@ -51,8 +57,8 @@ public class Main {
 
                 carroPasseio = new CarroPasseio(placa,cor,qtdeKms,qtdeCombustivel,tamanhoPortamala);
 
-                carros[qtdeCarros] = carroPasseio;
-                qtdeCarros += 1;
+                veiculos[qtdeVeiculos] = carroPasseio;
+                qtdeVeiculos += 1;
 
             }else if(tipo == 2){
                 System.out.println("Qual o máximo de carga do caminhão:");
@@ -61,8 +67,9 @@ public class Main {
                 qtdeEixos = scan.nextInt();
 
                 caminhao = new Caminhao(placa,cor,qtdeKms,qtdeCombustivel,qtdeEixos,pesoCarga);
-                caminhoes[qtdeCaminhoes] = caminhao;
-                qtdeCaminhoes += 1;
+
+                veiculos[qtdeVeiculos] = caminhao;
+                qtdeVeiculos += 1;
 
             }else{
                 System.out.println("Opção inválida!!!");
@@ -73,6 +80,26 @@ public class Main {
         }
 
 
+        for(int i=0;i<veiculos.length;i++){
+
+            if(veiculos[i] != null){
+
+                veiculos[i].abastecer(10);
+
+
+                if(veiculos[i] instanceof Caminhao){
+
+                    //typecast
+                    Caminhao caminhaoAux = (Caminhao)veiculos[i];
+                    caminhaoAux.carregar(1000);
+                }
+
+                System.out.println(veiculos[i].toString());
+            }
+        }
+
+
+/*
         for(int i=0;i<carros.length;i++){
             if(carros[i] != null){
                 System.out.println(carros[i].toString());
@@ -84,7 +111,7 @@ public class Main {
                 System.out.println(caminhoes[i].toString());
             }
         }
-
+*/
 
 
 
